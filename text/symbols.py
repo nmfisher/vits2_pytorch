@@ -271,4 +271,4 @@ symbols = [_pad] + [" ",
 "zh",
 "ZH"]
 
-SPACE_ID = symbols.index(" ")"
+SPACE_ID = symbols.index(" ")
