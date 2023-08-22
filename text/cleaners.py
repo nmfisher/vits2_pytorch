@@ -79,6 +79,9 @@ def transliteration_cleaners(text):
   text = collapse_whitespace(text)
   return text
 
+def space_splitter(text):
+  '''Pipeline for multi-char phonemized text (e.g. ARPAbet). Splits the string on spaces and returns the phonemes as a list'''
+  return text.split(" ")
 
 def english_cleaners(text):
   '''Pipeline for English text, including abbreviation expansion.'''
