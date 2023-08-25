@@ -267,6 +267,7 @@ symbols = [_pad] + [" ",
 "z",
 "Z",
 "zh",
-"ZH"]
+"ZH", 
+"[Sad]", "[Happy]", "[Angry]", "[Neutral]", "[Surprise]" ]
 
 SPACE_ID = symbols.index(" ")
