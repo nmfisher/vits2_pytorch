@@ -177,6 +177,7 @@ class TextAudioSpeakerLoader(torch.utils.data.Dataset):
         3) computes spectrograms from audio files.
     """
     def __init__(self, audiopaths_sid_text, hparams):
+        self.hparams = hparams
         self.audiopaths_sid_text = load_filepaths_and_text(audiopaths_sid_text)
         self.text_cleaners = hparams.text_cleaners
         self.max_wav_value = hparams.max_wav_value
@@ -186,6 +187,9 @@ class TextAudioSpeakerLoader(torch.utils.data.Dataset):
         self.win_length     = hparams.win_length
         self.sampling_rate  = hparams.sampling_rate
 
+        self.use_mel_spec_posterior = getattr(hparams, "use_mel_posterior_encoder", False)
+        if self.use_mel_spec_posterior:
+            self.n_mel_channels = getattr(hparams, "n_mel_channels", 80)
         self.cleaned_text = getattr(hparams, "cleaned_text", False)
 
         self.add_blank = hparams.add_blank
