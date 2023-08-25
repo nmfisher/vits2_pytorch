@@ -19,7 +19,7 @@ def text_to_sequence(text, cleaner_names):
   sequence = []
 
   clean_text = _clean_text(text, cleaner_names)
-  print(f"clean_text {clean_text}")
+  #print(f"clean_text {clean_text}")
   for symbol in clean_text:
     #if re.match("[AEIOU]", symbol) and not re.match("[0-9]", symbol[-1]):
     #    symbol = symbol + "0"
